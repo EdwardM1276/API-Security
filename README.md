@@ -39,13 +39,13 @@ API Key Authentication
 - Stored API key in environment variable
 - Required `X-API-Key` header for access
 
-### Code Vulnerability
+## Code Vulnerability
 @app.route('/data')
 def get_data():
     # NO AUTHENTICATION
     return jsonify(sensitive_data)  # names, emails, password hashes
 
-### Vulnerability Fix
+## Vulnerability Fix
 API_KEY = os.getenv("API_KEY", "mySecretKey")
 
 def is_authorized():
